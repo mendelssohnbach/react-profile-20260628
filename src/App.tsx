@@ -62,16 +62,27 @@ const profiles: Profile[] = [
   },
 ];
 
+function ProfileList() {
+  return (
+    <section className="profile-list">
+      {profiles.map((profile) => (
+        <ProfileCard
+          key={profile.id}
+          name={profile.name}
+          category={profile.category}
+          bio={profile.bio}
+          initial={profile.initial}
+        />
+      ))}
+    </section>
+  );
+}
+
 function App() {
   return (
     <main className="app">
       <Header />
-      <ProfileCard
-        name="Jack"
-        category="Frontend"
-        bio="ReactとCSSが好きなフロントエンド開発者です。"
-        initial="A"
-      />
+      <ProfileList />
     </main>
   );
 }

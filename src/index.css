@@ -117,3 +117,27 @@ p {
   margin: 8px 0 0;
   color: #52525b;
 }
+
+.profile-list {
+  display: grid;
+  /* グリッドの列の数と幅を指定 */
+  /* repeat(3, ...) : 同じ幅を3列作成 */
+  /*
+    minmax(0, 1fr) : 列の最小幅 0 と
+    最大幅 1fr：空き領域をを均等に「1つ分の割合」として分ける
+  */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 860px) {
+  .profile-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .profile-list {
+    grid-template-columns: 1fr;
+  }
+}
