@@ -60,7 +60,11 @@ const profiles: Profile[] = [
   },
 ];
 
-function ProfileList() {
+type ProfileListProps = {
+  profiles: Profile[];
+};
+
+function ProfileList({ profiles }: ProfileListProps) {
   return (
     <section className="profile-list">
       {profiles.map((profile) => (
@@ -93,6 +97,17 @@ function SearchBox({ value, onChange }: SearchBoxProps) {
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredProfiles = profiles.filter((profile) => {
+    const query = searchQuery.toLowerCase();
+
+    return (
+      profile.name.toLowerCase().includes(query) ||
+      profile.category.toLowerCase().includes(query) ||
+      profile.bio.toLowerCase().includes(query)
+    );
+  });
+
   return (
     <main className="app">
       <Header />
@@ -102,7 +117,7 @@ function App() {
         onChange={setSearchQuery}
       />
 
-      <ProfileList />
+      <ProfileList profiles={filteredProfiles} />
     </main>
   );
 }
