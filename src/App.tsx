@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './index.css';
 
 function Header() {
@@ -73,9 +74,17 @@ function ProfileList() {
 }
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
   return (
     <main className="app">
       <Header />
+
+      <input
+        value={searchQuery}
+        onChange={(event) => setSearchQuery(event.target.value)}
+        placeholder="Search profiles..."
+      />
+
       <ProfileList />
     </main>
   );
