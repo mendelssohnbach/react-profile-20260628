@@ -10,14 +10,21 @@ function Header() {
   );
 }
 
-function ProfileCard() {
+type ProfileCardProps = {
+  name: string;
+  category: string;
+  bio: string;
+  initial: string;
+};
+
+function ProfileCard({ name, category, bio, initial }: ProfileCardProps) {
   return (
     <article className="profile-card">
-      <div className="profile-card__avatar">Y</div>
+      <div className="profile-card__avatar">{initial}</div>
       <div>
-        <p className="profile-card__category">Frontend</p>
-        <h2>Jack</h2>
-        <p>ReactとCSSが好きなフロントエンド開発者です。</p>
+        <p className="profile-card__category">{category}</p>
+        <h2>{name}</h2>
+        <p>{bio}</p>
       </div>
     </article>
   );
@@ -27,7 +34,12 @@ function App() {
   return (
     <main className="app">
       <Header />
-      <ProfileCard />
+      <ProfileCard
+        name="Jack"
+        category="Frontend"
+        bio="ReactとCSSが好きなフロントエンド開発者です。"
+        initial="A"
+      />
     </main>
   );
 }
