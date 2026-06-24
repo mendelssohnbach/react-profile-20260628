@@ -1,8 +1,8 @@
-import './App.css';
+import './index.css';
 
 function App() {
   return (
-    <main>
+    <main className="app">
       <h1>Profile Card</h1>
       <p>カード一覧アプリ</p>
     </main>

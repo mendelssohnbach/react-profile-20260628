@@ -31,3 +31,22 @@ input {
 a {
   color: inherit;
 }
+
+.app {
+  /* PC時は560px固定、スマホ時は画面幅に追従 */
+  width: min(560px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+h1 {
+  margin: 0;
+  /* 画面の幅（ビューポートの幅）に合わせて文字の大きさを「40px から 80px の間」で自動的に変化させる */
+  /* clamp(最小値, 推奨値, 最大値) */
+  font-size: clamp(40px, 8vw, 80px);
+  letter-spacing: -0.06em;
+}
+
+p {
+  line-height: 1.8;
+}
