@@ -50,3 +50,24 @@ h1 {
 p {
   line-height: 1.8;
 }
+
+.header {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #71717a;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lead {
+  max-width: 640px;
+  margin: 0;
+  color: #52525b;
+  font-size: 18px;
+}
