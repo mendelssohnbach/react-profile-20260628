@@ -73,16 +73,33 @@ function ProfileList() {
   );
 }
 
+type SearchBoxProps = {
+  value: string;
+  onChange: (value: string) => void;
+};
+
+function SearchBox({ value, onChange }: SearchBoxProps) {
+  return (
+    <label className="search-box">
+      <span>Search</span>
+      <input
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        placeholder="名前や説明文で検索"
+      />
+    </label>
+  );
+}
+
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
   return (
     <main className="app">
       <Header />
 
-      <input
+      <SearchBox
         value={searchQuery}
-        onChange={(event) => setSearchQuery(event.target.value)}
-        placeholder="Search profiles..."
+        onChange={setSearchQuery}
       />
 
       <ProfileList />

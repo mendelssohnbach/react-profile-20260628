@@ -141,3 +141,28 @@ p {
     grid-template-columns: 1fr;
   }
 }
+.search-box {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.search-box span {
+  color: #52525b;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d4d4d8;
+  border-radius: 16px;
+  background: #ffffff;
+  color: inherit;
+}
+
+.search-box input:focus {
+  outline: 3px solid rgba(59, 130, 246, 0.18);
+  border-color: #60a5fa;
+}
