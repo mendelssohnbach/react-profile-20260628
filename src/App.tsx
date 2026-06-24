@@ -10,10 +10,24 @@ function Header() {
   );
 }
 
+function ProfileCard() {
+  return (
+    <article className="profile-card">
+      <div className="profile-card__avatar">Y</div>
+      <div>
+        <p className="profile-card__category">Frontend</p>
+        <h2>Jack</h2>
+        <p>ReactとCSSが好きなフロントエンド開発者です。</p>
+      </div>
+    </article>
+  );
+}
+
 function App() {
   return (
     <main className="app">
       <Header />
+      <ProfileCard />
     </main>
   );
 }

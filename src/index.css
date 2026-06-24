@@ -71,3 +71,49 @@ p {
   color: #52525b;
   font-size: 18px;
 }
+
+.profile-card {
+  display: grid;
+  /* 要素を2列に2列に並べる */
+  /* 1列目: auto / 中身のコンテンツに合わせて幅を決定 */
+  /* 2列目: 1fr / 残りのスペースをすｂて専有 */
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 20px;
+  border: 1px solid #e4e4e7;
+  border-radius: 20px;
+  background: #ffffff;
+  /* 要素に外向きの影を付ける */
+  /* 横方向: 0 縦方向 16px ボカシの強さ 40px */
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.profile-card__avatar {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 16px;
+  background: #18181b;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.profile-card__category {
+  margin: 0 0 4px;
+  color: #71717a;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-card h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.profile-card p {
+  margin: 8px 0 0;
+  color: #52525b;
+}
