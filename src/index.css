@@ -147,12 +147,18 @@ p {
   margin-bottom: 24px;
 }
 
+/*
+    子孫セレクタ .search-box クラスの内側の span 要素が対象
+*/
 .search-box span {
   color: #52525b;
   font-size: 14px;
   font-weight: 700;
 }
 
+/*
+    子孫セレクタ .search-box クラスの内側の input 要素が対象
+*/
 .search-box input {
   width: 100%;
   padding: 14px 16px;
@@ -162,6 +168,7 @@ p {
   color: inherit;
 }
 
+/* input要素に :focus 疑似ウラスを付加する */
 .search-box input:focus {
   outline: 3px solid rgba(59, 130, 246, 0.18);
   border-color: #60a5fa;
