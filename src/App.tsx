@@ -11,20 +11,17 @@ function Header() {
 }
 
 type ProfileCardProps = {
-  name: string;
-  category: string;
-  bio: string;
-  initial: string;
+  profile: Profile;
 };
 
-function ProfileCard({ name, category, bio, initial }: ProfileCardProps) {
+function ProfileCard({ profile }: ProfileCardProps) {
   return (
     <article className="profile-card">
-      <div className="profile-card__avatar">{initial}</div>
+      <div className="profile-card__avatar">{profile.initial}</div>
       <div>
-        <p className="profile-card__category">{category}</p>
-        <h2>{name}</h2>
-        <p>{bio}</p>
+        <p className="profile-card__category">{profile.category}</p>
+        <h2>{profile.name}</h2>
+        <p>{profile.bio}</p>
       </div>
     </article>
   );
@@ -68,10 +65,7 @@ function ProfileList() {
       {profiles.map((profile) => (
         <ProfileCard
           key={profile.id}
-          name={profile.name}
-          category={profile.category}
-          bio={profile.bio}
-          initial={profile.initial}
+          profile={profile}
         />
       ))}
     </section>
